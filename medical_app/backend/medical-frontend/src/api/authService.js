@@ -4,7 +4,7 @@ import API from "./api";
 export const loginUser = async (userData) => {
   try {
     const response = await API.post("login/", {
-      username: userData.username || "",  // Allow username or email
+      username: userData.username || "",  
       email: userData.email || "",
       password: userData.password,
     });

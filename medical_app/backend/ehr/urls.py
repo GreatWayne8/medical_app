@@ -4,5 +4,5 @@ from .views import PatientListCreateView, DoctorListCreateView, EHRListCreateVie
 urlpatterns = [
     path("patients/", PatientListCreateView.as_view(), name="patients"),
     path("doctors/", DoctorListCreateView.as_view(), name="doctors"),
-    path("ehr/", EHRListCreateView.as_view(), name="ehr"),
+    path("", EHRListCreateView.as_view(), name="ehr"),
 ]
