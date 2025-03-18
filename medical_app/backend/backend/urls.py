@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')), 
     path("api/ehr/", include("ehr.urls")),
-
 ]
