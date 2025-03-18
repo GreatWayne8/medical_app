@@ -31,6 +31,8 @@ class Patient(models.Model):
     age = models.IntegerField()
     contact = models.CharField(max_length=15)
     medical_history = models.TextField(blank=True, null=True)  
+    assigned_doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, null=True, blank=True)
+    
 
     def __str__(self):
         return f"{self.user.username} - {self.age} years old"

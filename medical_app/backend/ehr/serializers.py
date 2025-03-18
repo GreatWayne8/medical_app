@@ -3,12 +3,13 @@ from .models import Patient, Doctor, ElectronicHealthRecord
 
 class DoctorSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
-    
+
     class Meta:
         model = Doctor
         fields = '__all__'
 
 class PatientSerializer(serializers.ModelSerializer):
+    assigned_doctor = DoctorSerializer(read_only=True)
     class Meta:
         model = Patient
         fields = '__all__'
