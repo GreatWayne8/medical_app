@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Patient, Doctor, ElectronicHealthRecord
+from .models import Patient, Doctor, EHR
 
 class DoctorSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(read_only=True)
@@ -17,5 +17,5 @@ class PatientSerializer(serializers.ModelSerializer):
 
 class EHRSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ElectronicHealthRecord
+        model = EHR
         fields = '__all__'

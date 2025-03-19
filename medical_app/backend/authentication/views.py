@@ -27,14 +27,14 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-        token["username"] = user.username  # Add extra info if needed
+        token["username"] = user.username 
         return token
 
 class LoginView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        print("Login attempt data:", request.data)  # Debugging
+        print("Login attempt data:", request.data)  
 
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():

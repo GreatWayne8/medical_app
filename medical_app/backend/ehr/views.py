@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from .models import Patient, Doctor, ElectronicHealthRecord
+from .models import Patient, Doctor, EHR
 from .serializers import PatientSerializer, DoctorSerializer, EHRSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
@@ -56,7 +56,7 @@ class AssignDoctorView(APIView):
             return Response({"error": "Doctor not found"}, status=404)
 
 class EHRListCreateView(generics.ListCreateAPIView):
-    queryset = ElectronicHealthRecord.objects.all()
+    queryset = EHR.objects.all()
     serializer_class = EHRSerializer
     permission_classes = [IsAuthenticated]
 

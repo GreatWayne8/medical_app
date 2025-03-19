@@ -5,6 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./routes/PrivateRoute";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EHRPage from "./pages/EHRPage";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -38,5 +41,19 @@ const App = () => {
     </Router>
   );
 };
+
+export default App;
+
+
+
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/ehr" element={<EHRPage />} />
+            </Routes>
+        </Router>
+    );
+}
 
 export default App;
